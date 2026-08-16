@@ -1,0 +1,75 @@
+<nav class="sticky top-0 z-50 bg-cartoon-blue-dark dark:bg-dark-surface border-b-4 border-cartoon-cream dark:border-dark-border cartoon-shadow">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 md:h-20">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative">
+          <div class="w-10 h-10 md:w-12 md:h-12 bg-cartoon-yellow dark:bg-cartoon-yellow-dark rounded-xl cartoon-border flex items-center justify-center text-xl md:text-2xl text-cartoon-blue-dark dark:text-dark-bg transform group-hover:rotate-12 transition-transform duration-300">
+            <i class="fas fa-dragon"></i>
+          </div>
+          <span class="absolute -top-1 -right-1 w-3 h-3 bg-cartoon-blue-light dark:bg-cartoon-blue-light rounded-full border-2 border-cartoon-cream dark:border-dark-border"></span>
+        </div>
+        
+        <div class="flex items-baseline">
+          <span class="text-xl md:text-3xl font-black tracking-tight text-cartoon-yellow dark:text-cartoon-yellow">
+            Dio<span class="text-cartoon-cream dark:text-dark-text">Portfolio</span>
+          </span>
+          <span class="hidden md:inline-block ml-2 text-xs font-bold uppercase bg-cartoon-yellow dark:bg-cartoon-yellow-dark text-cartoon-blue-dark dark:text-dark-bg px-2 py-0.5 rounded-full cartoon-border border-2 border-cartoon-cream dark:border-dark-border">
+            <i class="fas fa-star mr-1"></i> v2.0
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <a href="#work" class="px-4 py-2 rounded-xl font-bold uppercase tracking-wider text-sm lg:text-base flex items-center gap-2 hover:bg-cartoon-yellow/10 dark:hover:bg-cartoon-yellow/10 transition-all duration-200 cartoon-border border-transparent hover:border-cartoon-cream dark:hover:border-dark-border">
+          <i class="fas fa-paint-brush text-cartoon-yellow dark:text-cartoon-yellow"></i> 
+          <span class="text-cartoon-cream dark:text-dark-text">karya</span>
+        </a>
+        <a href="#about" class="px-4 py-2 rounded-xl font-bold uppercase tracking-wider text-sm lg:text-base flex items-center gap-2 hover:bg-cartoon-yellow/10 dark:hover:bg-cartoon-yellow/10 transition-all duration-200 cartoon-border border-transparent hover:border-cartoon-cream dark:hover:border-dark-border">
+          <i class="fas fa-star text-cartoon-yellow dark:text-cartoon-yellow"></i> 
+          <span class="text-cartoon-cream dark:text-dark-text">tentang</span>
+        </a>
+        <a href="#contact" class="px-4 py-2 rounded-xl font-bold uppercase tracking-wider text-sm lg:text-base flex items-center gap-2 hover:bg-cartoon-yellow/10 dark:hover:bg-cartoon-yellow/10 transition-all duration-200 cartoon-border border-transparent hover:border-cartoon-cream dark:hover:border-dark-border">
+          <i class="fas fa-bolt text-cartoon-yellow dark:text-cartoon-yellow"></i> 
+          <span class="text-cartoon-cream dark:text-dark-text">kontak</span>
+        </a>
+        
+        <!-- Dark Mode Toggle Desktop -->
+        <button id="dark-toggle" class="btn-cartoon bg-cartoon-yellow dark:bg-cartoon-yellow-dark text-cartoon-blue-dark dark:text-dark-bg px-4 py-2 rounded-full border-2 border-cartoon-cream dark:border-dark-border font-bold flex items-center gap-2 hover:scale-105 transition-transform duration-200 ml-2">
+          <i id="dark-icon-desktop" class="fas fa-moon"></i>
+          <span class="hidden lg:inline">mode</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center gap-2">
+        <button id="dark-toggle-mobile" class="btn-cartoon bg-cartoon-yellow dark:bg-cartoon-yellow-dark text-cartoon-blue-dark dark:text-dark-bg p-2.5 rounded-full border-2 border-cartoon-cream dark:border-dark-border hover:scale-105 transition-transform duration-200">
+          <i id="dark-icon-mobile" class="fas fa-moon"></i>
+        </button>
+        <button id="menu-btn" class="p-2 rounded-xl hover:bg-cartoon-yellow/10 dark:hover:bg-cartoon-yellow/10 transition-all duration-200 cartoon-border border-transparent hover:border-cartoon-cream dark:hover:border-dark-border">
+          <i class="fas fa-bars text-2xl text-cartoon-cream dark:text-dark-text"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="max-h-0 overflow-hidden md:hidden bg-cartoon-blue-dark dark:bg-dark-surface border-t-2 border-cartoon-cream dark:border-dark-border transition-all duration-300 ease-in-out">
+    <div class="px-4 py-4 space-y-2 font-bold">
+      <a href="#work" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cartoon-yellow/10 dark:hover:bg-cartoon-yellow/10 transition-all duration-200 cartoon-border border-transparent hover:border-cartoon-cream dark:hover:border-dark-border">
+        <i class="fas fa-paint-brush text-cartoon-yellow dark:text-cartoon-yellow w-6"></i> 
+        <span class="text-cartoon-cream dark:text-dark-text">Karya</span>
+      </a>
+      <a href="#about" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cartoon-yellow/10 dark:hover:bg-cartoon-yellow/10 transition-all duration-200 cartoon-border border-transparent hover:border-cartoon-cream dark:hover:border-dark-border">
+        <i class="fas fa-star text-cartoon-yellow dark:text-cartoon-yellow w-6"></i> 
+        <span class="text-cartoon-cream dark:text-dark-text">Tentang</span>
+      </a>
+      <a href="#contact" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cartoon-yellow/10 dark:hover:bg-cartoon-yellow/10 transition-all duration-200 cartoon-border border-transparent hover:border-cartoon-cream dark:hover:border-dark-border">
+        <i class="fas fa-bolt text-cartoon-yellow dark:text-cartoon-yellow w-6"></i> 
+        <span class="text-cartoon-cream dark:text-dark-text">Kontak</span>
+      </a>
+    </div>
+  </div>
+</nav>

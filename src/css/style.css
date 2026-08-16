@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+/* ========================================
+   CUSTOM STYLES - CARTOON NEUBRUTALISM
+   ======================================== */
+
+/* --- Custom Colors --- */
+@theme {
+  /* Light Mode Colors */
+  --color-cartoon-yellow: #FEF3A1;
+  --color-cartoon-yellow-dark: #F5D742;
+  --color-cartoon-blue-dark: #194787;
+  --color-cartoon-blue-light: #5DC3EB;
+  --color-cartoon-cream: #F5F7EA;
+  --color-cartoon-blue-gray: #4E91A4;
+  
+  /* Dark Mode Colors */
+  --color-dark-bg: #0F1A2E;
+  --color-dark-surface: #1A2D45;
+  --color-dark-card: #243B5A;
+  --color-dark-border: #4A7A8C;
+  --color-dark-text: #E8EDF2;
+  --color-dark-muted: #8AAEC0;
+  
+  /* Accent Colors */
+  --color-accent-orange: #FF8C42;
+  --color-accent-pink: #FF6B8A;
+  --color-accent-green: #4ECDC4;
+  --color-accent-purple: #A78BFA;
+}
+
+/* --- Base Styles --- */
+@layer base {
+  body {
+    font-family: 'Comic Neue', 'Segoe UI', system-ui, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Light mode - background biru tua */
+  body {
+    background-color: var(--color-cartoon-blue-dark);
+    color: var(--color-cartoon-cream);
+  }
+
+  /* Dark mode - background hitam kebiruan */
+  .dark body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: var(--color-cartoon-yellow);
+    color: var(--color-cartoon-blue-dark);
+  }
+  
+  .dark ::selection {
+    background: var(--color-cartoon-yellow-dark);
+    color: var(--color-dark-bg);
+  }
+}
+
+/* --- Components --- */
+@layer components {
+  /* Shadow */
+  .cartoon-shadow {
+    box-shadow: 6px 6px 0 var(--color-cartoon-cream);
+  }
+  
+  .dark .cartoon-shadow {
+    box-shadow: 6px 6px 0 var(--color-cartoon-yellow-dark);
+  }
+
+  /* Border */
+  .cartoon-border {
+    border: 3px solid var(--color-cartoon-cream);
+  }
+  
+  .dark .cartoon-border {
+    border-color: var(--color-dark-border);
+  }
+
+  /* Button */
+  .btn-cartoon {
+    transition: all 0.15s ease;
+    box-shadow: 5px 5px 0 var(--color-cartoon-cream);
+  }
+  
+  .dark .btn-cartoon {
+    box-shadow: 5px 5px 0 var(--color-dark-border);
+  }
+  
+  .btn-cartoon:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 var(--color-cartoon-cream);
+  }
+  
+  .dark .btn-cartoon:active {
+    box-shadow: 2px 2px 0 var(--color-dark-border);
+  }
+
+  /* Cards - Light mode */
+  .card-cartoon {
+    background: var(--color-cartoon-yellow);
+    border: 3px solid var(--color-cartoon-cream);
+    box-shadow: 8px 8px 0 var(--color-cartoon-cream);
+    transition: all 0.2s ease;
+    color: var(--color-cartoon-blue-dark);
+  }
+  
+  /* Cards - Dark mode */
+  .dark .card-cartoon {
+    background: var(--color-dark-card);
+    border-color: var(--color-dark-border);
+    box-shadow: 8px 8px 0 var(--color-dark-border);
+    color: var(--color-dark-text);
+  }
+  
+  .card-cartoon:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0 var(--color-cartoon-cream);
+  }
+  
+  .dark .card-cartoon:hover {
+    box-shadow: 10px 10px 0 var(--color-dark-border);
+  }
+
+  /* Mobile menu */
+  #mobile-menu {
+    transition: max-height 0.3s ease-in-out, opacity 0.2s ease;
+  }
+
+  .scroll-mt-20 {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Badge */
+  .badge-cartoon {
+    background: var(--color-cartoon-blue-light);
+    color: var(--color-cartoon-blue-dark);
+    border: 2px solid var(--color-cartoon-cream);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+  
+  .dark .badge-cartoon {
+    background: var(--color-cartoon-yellow-dark);
+    color: var(--color-dark-bg);
+    border-color: var(--color-dark-border);
+  }
+
+  /* Tag - Light mode */
+  .tag-cartoon {
+    background: var(--color-cartoon-cream);
+    color: var(--color-cartoon-blue-dark);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 2px solid var(--color-cartoon-blue-dark);
+  }
+  
+  /* Tag - Dark mode */
+  .dark .tag-cartoon {
+    background: var(--color-cartoon-yellow-dark);
+    color: var(--color-dark-bg);
+    border-color: var(--color-dark-border);
+  }
+
+  /* Section card - Light mode */
+  .section-card {
+    background: var(--color-cartoon-yellow);
+    border: 3px solid var(--color-cartoon-cream);
+    box-shadow: 10px 10px 0 var(--color-cartoon-cream);
+    color: var(--color-cartoon-blue-dark);
+  }
+  
+  /* Section card - Dark mode */
+  .dark .section-card {
+    background: var(--color-dark-card);
+    border-color: var(--color-dark-border);
+    box-shadow: 10px 10px 0 var(--color-dark-border);
+    color: var(--color-dark-text);
+  }
+}
+
+/* --- Utilities --- */
+@layer utilities {
+  /* Custom Scrollbar - Light mode */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-cartoon-blue-dark);
+    border: 2px solid var(--color-cartoon-cream);
+  }
+  
+  .dark ::-webkit-scrollbar-track {
+    background: var(--color-dark-bg);
+    border-color: var(--color-dark-border);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-cartoon-yellow);
+    border: 2px solid var(--color-cartoon-cream);
+    border-radius: 0;
+  }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    background: var(--color-cartoon-yellow-dark);
+    border-color: var(--color-dark-border);
+  }
+
+  /* Icon Bounce */
+  .icon-bounce {
+    display: inline-block;
+    animation: bob 3s infinite ease-in-out;
+  }
+  
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  /* Heart pulse */
+  .animate-pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* Gradient text - Light mode */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-cartoon-yellow), var(--color-cartoon-cream));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gradient text - Dark mode */
+  .dark .text-gradient {
+    background: linear-gradient(135deg, var(--color-cartoon-yellow), var(--color-cartoon-yellow-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 20px rgba(254, 243, 161, 0.2);
+  }
+  
+  .dark .glow {
+    box-shadow: 0 0 20px rgba(245, 215, 66, 0.15);
+  }
+
+  /* Text colors for light mode */
+  .text-light {
+    color: var(--color-cartoon-cream);
+  }
+  
+  .text-light-muted {
+    color: rgba(245, 247, 234, 0.7);
+  }
+  
+  .dark .text-light-muted {
+    color: var(--color-dark-muted);
+  }
+}

@@ -1,102 +1,121 @@
 @import "tailwindcss";
 
 /* ========================================
-   CUSTOM STYLES - CARTOON NEUBRUTALISM
+   CUSTOM STYLES - RETRO GAMING THEME
    ======================================== */
 
 /* --- Custom Colors --- */
 @theme {
-  /* Light Mode Colors */
-  --color-cartoon-yellow: #FEF3A1;
-  --color-cartoon-yellow-dark: #F5D742;
-  --color-cartoon-blue-dark: #194787;
-  --color-cartoon-blue-light: #5DC3EB;
-  --color-cartoon-cream: #F5F7EA;
-  --color-cartoon-blue-gray: #4E91A4;
+  /* Light Mode - Retro Gaming */
+  --color-primary: #F2A098;
+  --color-dark-navy: #4C667A;
+  --color-sage: #9ABCAE;
+  --color-cream: #F2E6D3;
+  --color-teal: #84B5BD;
   
-  /* Dark Mode Colors */
-  --color-dark-bg: #0F1A2E;
-  --color-dark-surface: #1A2D45;
-  --color-dark-card: #243B5A;
-  --color-dark-border: #4A7A8C;
-  --color-dark-text: #E8EDF2;
-  --color-dark-muted: #8AAEC0;
+  /* Light Mode - Variants */
+  --color-primary-dark: #E8827A;
+  --color-primary-light: #F8C4BE;
+  --color-sage-dark: #7DA89A;
   
-  /* Accent Colors */
-  --color-accent-orange: #FF8C42;
-  --color-accent-pink: #FF6B8A;
-  --color-accent-green: #4ECDC4;
-  --color-accent-purple: #A78BFA;
+  /* Dark Mode - Lebih Gelap */
+  --color-dark-bg: #1A1A2E;
+  --color-dark-surface: #16213E;
+  --color-dark-card: #0F3460;
+  --color-dark-border: #2D4059;
+  --color-dark-text: #EAEAEA;
+  --color-dark-muted: #A8B2C1;
+  --color-dark-accent: #4A6FA5;
+  
+  /* Gaming Accents */
+  --color-arcade-yellow: #FFD700;
+  --color-arcade-pink: #FF6B9D;
+  --color-arcade-blue: #4FC3F7;
+  --color-arcade-green: #66BB6A;
 }
 
 /* --- Base Styles --- */
 @layer base {
   body {
-    font-family: 'Comic Neue', 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Comic Neue', 'Courier New', monospace, system-ui, sans-serif;
     transition: background-color 0.4s ease, color 0.4s ease;
+    background-color: var(--color-primary);
+    color: var(--color-dark-navy);
+    image-rendering: pixelated;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  /* Light mode - background biru tua */
-  body {
-    background-color: var(--color-cartoon-blue-dark);
-    color: var(--color-cartoon-cream);
-  }
-
-  /* Dark mode - background hitam kebiruan */
+  /* Dark mode */
   .dark body {
     background-color: var(--color-dark-bg);
     color: var(--color-dark-text);
   }
 
-  /* Selection color */
+  /* Selection */
   ::selection {
-    background: var(--color-cartoon-yellow);
-    color: var(--color-cartoon-blue-dark);
+    background: var(--color-arcade-yellow);
+    color: var(--color-dark-navy);
   }
   
   .dark ::selection {
-    background: var(--color-cartoon-yellow-dark);
+    background: var(--color-arcade-pink);
     color: var(--color-dark-bg);
   }
 }
 
 /* --- Components --- */
 @layer components {
-  /* Shadow */
+  /* Shadow - Light mode */
   .cartoon-shadow {
-    box-shadow: 6px 6px 0 var(--color-cartoon-cream);
+    box-shadow: 6px 6px 0 var(--color-dark-navy);
   }
   
   .dark .cartoon-shadow {
-    box-shadow: 6px 6px 0 var(--color-cartoon-yellow-dark);
+    box-shadow: 6px 6px 0 var(--color-dark-border);
   }
 
-  /* Border */
+  /* Border - Light mode */
   .cartoon-border {
-    border: 3px solid var(--color-cartoon-cream);
+    border: 3px solid var(--color-dark-navy);
   }
   
   .dark .cartoon-border {
     border-color: var(--color-dark-border);
   }
 
-  /* Button */
+  /* Button - Light mode */
   .btn-cartoon {
     transition: all 0.15s ease;
-    box-shadow: 5px 5px 0 var(--color-cartoon-cream);
+    box-shadow: 5px 5px 0 var(--color-dark-navy);
+    background: var(--color-cream);
+    color: var(--color-dark-navy);
+    border: 3px solid var(--color-dark-navy);
   }
   
   .dark .btn-cartoon {
     box-shadow: 5px 5px 0 var(--color-dark-border);
+    background: var(--color-dark-card);
+    color: var(--color-dark-text);
+    border-color: var(--color-dark-border);
+  }
+  
+  .btn-cartoon:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--color-dark-navy);
+    background: var(--color-primary-light);
+  }
+  
+  .dark .btn-cartoon:hover {
+    box-shadow: 7px 7px 0 var(--color-dark-border);
+    background: var(--color-dark-accent);
   }
   
   .btn-cartoon:active {
     transform: translate(3px, 3px);
-    box-shadow: 2px 2px 0 var(--color-cartoon-cream);
+    box-shadow: 2px 2px 0 var(--color-dark-navy);
   }
   
   .dark .btn-cartoon:active {
@@ -105,11 +124,11 @@
 
   /* Cards - Light mode */
   .card-cartoon {
-    background: var(--color-cartoon-yellow);
-    border: 3px solid var(--color-cartoon-cream);
-    box-shadow: 8px 8px 0 var(--color-cartoon-cream);
+    background: var(--color-cream);
+    border: 3px solid var(--color-dark-navy);
+    box-shadow: 8px 8px 0 var(--color-dark-navy);
     transition: all 0.2s ease;
-    color: var(--color-cartoon-blue-dark);
+    color: var(--color-dark-navy);
   }
   
   /* Cards - Dark mode */
@@ -122,7 +141,7 @@
   
   .card-cartoon:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 10px 10px 0 var(--color-cartoon-cream);
+    box-shadow: 10px 10px 0 var(--color-dark-navy);
   }
   
   .dark .card-cartoon:hover {
@@ -138,48 +157,30 @@
     scroll-margin-top: 5rem;
   }
 
-  /* Badge */
-  .badge-cartoon {
-    background: var(--color-cartoon-blue-light);
-    color: var(--color-cartoon-blue-dark);
-    border: 2px solid var(--color-cartoon-cream);
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-weight: 700;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-  }
-  
-  .dark .badge-cartoon {
-    background: var(--color-cartoon-yellow-dark);
-    color: var(--color-dark-bg);
-    border-color: var(--color-dark-border);
-  }
-
   /* Tag - Light mode */
   .tag-cartoon {
-    background: var(--color-cartoon-cream);
-    color: var(--color-cartoon-blue-dark);
+    background: var(--color-sage);
+    color: var(--color-dark-navy);
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 700;
-    border: 2px solid var(--color-cartoon-blue-dark);
+    border: 2px solid var(--color-dark-navy);
   }
   
   /* Tag - Dark mode */
   .dark .tag-cartoon {
-    background: var(--color-cartoon-yellow-dark);
-    color: var(--color-dark-bg);
+    background: var(--color-dark-accent);
+    color: var(--color-dark-text);
     border-color: var(--color-dark-border);
   }
 
   /* Section card - Light mode */
   .section-card {
-    background: var(--color-cartoon-yellow);
-    border: 3px solid var(--color-cartoon-cream);
-    box-shadow: 10px 10px 0 var(--color-cartoon-cream);
-    color: var(--color-cartoon-blue-dark);
+    background: var(--color-cream);
+    border: 3px solid var(--color-dark-navy);
+    box-shadow: 10px 10px 0 var(--color-dark-navy);
+    color: var(--color-dark-navy);
   }
   
   /* Section card - Dark mode */
@@ -189,18 +190,169 @@
     box-shadow: 10px 10px 0 var(--color-dark-border);
     color: var(--color-dark-text);
   }
+
+  /* ========================================
+     NAVBAR HOVER EFFECTS - HALUS & KALEM
+     ======================================== */
+
+  /* --- LOGO HOVER - Left --- */
+  .logo-container {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .logo-container:hover {
+    transform: translateX(-2px);
+  }
+  
+  /* Logo icon - effect lebih halus */
+  .logo-icon {
+    transition: all 0.3s ease;
+  }
+  
+  .logo-container:hover .logo-icon {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(132, 181, 189, 0.15);
+    border-color: var(--color-dark-navy);
+  }
+  
+  .dark .logo-container:hover .logo-icon {
+    box-shadow: 0 0 20px rgba(74, 111, 165, 0.15);
+    border-color: var(--color-dark-border);
+  }
+  
+  /* Icon subtle glow */
+  .logo-container:hover .logo-icon i {
+    animation: iconGlowSubtle 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes iconGlowSubtle {
+    0% { filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.2)); }
+    100% { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4)); }
+  }
+  
+  .dark .logo-container:hover .logo-icon i {
+    animation: iconGlowDarkSubtle 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes iconGlowDarkSubtle {
+    0% { filter: drop-shadow(0 0 3px rgba(74, 111, 165, 0.2)); }
+    100% { filter: drop-shadow(0 0 10px rgba(74, 111, 165, 0.4)); }
+  }
+  
+  /* Logo text - lebih halus */
+  .logo-text {
+    transition: all 0.3s ease;
+  }
+  
+  .logo-container:hover .logo-text {
+    transform: translateX(2px);
+  }
+  
+  .logo-text .highlight {
+    transition: all 0.3s ease;
+  }
+  
+  .logo-container:hover .logo-text .highlight {
+    color: var(--color-arcade-yellow);
+  }
+  
+  .dark .logo-container:hover .logo-text .highlight {
+    color: var(--color-arcade-pink);
+  }
+
+  /* --- DESKTOP MENU HOVER - Center --- */
+  .menu-container {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  /* Menu item - efek halus */
+  .menu-item {
+    position: relative;
+    transition: all 0.25s ease;
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-2px);
+    background: var(--color-sage/20) !important;
+  }
+  
+  .dark .menu-item:hover {
+    background: var(--color-dark-accent/20) !important;
+  }
+  
+  /* Underline - lebih halus */
+  .menu-item .menu-underline {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-arcade-yellow);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    opacity: 0.6;
+  }
+  
+  .menu-item:hover .menu-underline {
+    width: 60%;
+    opacity: 1;
+  }
+  
+  .dark .menu-item .menu-underline {
+    background: var(--color-arcade-pink);
+  }
+  
+  /* Icon subtle animation */
+  .menu-item i {
+    transition: all 0.25s ease;
+  }
+  
+  .menu-item:hover i {
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  /* --- DARK TOGGLE BUTTON - Lebih Stabil --- */
+  .dark-toggle-btn {
+    transition: all 0.3s ease;
+  }
+  
+  .dark-toggle-btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 102, 122, 0.2);
+  }
+  
+  .dark .dark-toggle-btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 111, 165, 0.2);
+  }
+  
+  .dark-toggle-btn:active {
+    transform: scale(0.95) !important;
+  }
+  
+  /* Toggle icon spin - lebih halus */
+  .dark-toggle-btn i {
+    transition: all 0.4s ease;
+  }
+  
+  .dark-toggle-btn:hover i {
+    transform: rotate(180deg);
+  }
 }
 
 /* --- Utilities --- */
 @layer utilities {
   /* Custom Scrollbar - Light mode */
   ::-webkit-scrollbar {
-    width: 12px;
+    width: 14px;
   }
   
   ::-webkit-scrollbar-track {
-    background: var(--color-cartoon-blue-dark);
-    border: 2px solid var(--color-cartoon-cream);
+    background: var(--color-primary);
+    border: 3px solid var(--color-dark-navy);
   }
   
   .dark ::-webkit-scrollbar-track {
@@ -209,13 +361,13 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--color-cartoon-yellow);
-    border: 2px solid var(--color-cartoon-cream);
+    background: var(--color-teal);
+    border: 3px solid var(--color-dark-navy);
     border-radius: 0;
   }
   
   .dark ::-webkit-scrollbar-thumb {
-    background: var(--color-cartoon-yellow-dark);
+    background: var(--color-dark-accent);
     border-color: var(--color-dark-border);
   }
 
@@ -240,41 +392,21 @@
     50% { transform: scale(1.2); }
   }
 
-  /* Gradient text - Light mode */
-  .text-gradient {
-    background: linear-gradient(135deg, var(--color-cartoon-yellow), var(--color-cartoon-cream));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  /* Gradient text - Dark mode */
-  .dark .text-gradient {
-    background: linear-gradient(135deg, var(--color-cartoon-yellow), var(--color-cartoon-yellow-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
   /* Glow effect */
   .glow {
-    box-shadow: 0 0 20px rgba(254, 243, 161, 0.2);
+    box-shadow: 0 0 20px rgba(242, 160, 152, 0.3);
   }
   
   .dark .glow {
-    box-shadow: 0 0 20px rgba(245, 215, 66, 0.15);
+    box-shadow: 0 0 20px rgba(79, 111, 165, 0.2);
   }
 
-  /* Text colors for light mode */
-  .text-light {
-    color: var(--color-cartoon-cream);
+  /* 8-bit text shadow */
+  .text-shadow-pixel {
+    text-shadow: 3px 3px 0 var(--color-dark-navy);
   }
   
-  .text-light-muted {
-    color: rgba(245, 247, 234, 0.7);
-  }
-  
-  .dark .text-light-muted {
-    color: var(--color-dark-muted);
+  .dark .text-shadow-pixel {
+    text-shadow: 3px 3px 0 var(--color-dark-border);
   }
 }

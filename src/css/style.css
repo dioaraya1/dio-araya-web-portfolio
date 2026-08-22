@@ -102,110 +102,89 @@
    LOGO COMPONENTS - PREMIUM DESIGN
    ======================================== */
 
-  /* Logo container */
+  /* --- Logo Container --- */
   .logo-container {
-    @apply flex items-center shrink-0 transition-all duration-300 cursor-pointer no-underline;
+    @apply inline-block transition-all duration-300 cursor-pointer no-underline;
   }
 
   .logo-container:hover {
     transform: translateX(-2px);
   }
 
-  /* --- Logo Icon Premium --- */
-  .logo-icon {
-    @apply relative flex items-center gap-2.5 px-4 py-2.5 md:px-5 md:py-3 rounded-xl transition-all duration-300;
+  .logo-container:active {
+    transform: scale(0.95);
+  }
+
+  /* --- Logo Wrapper (btn-cartoon style) --- */
+  .logo-wrapper {
+    @apply relative flex items-center gap-3 px-4 py-2.5 md:px-5 md:py-3 rounded-4xl transition-all duration-300;
     /* Light mode */
-    background: linear-gradient(135deg, var(--color-cream) 0%, #f5e8d4 100%);
-    color: var(--color-dark-navy);
+    background-color: var(--color-cream);
     border: 3px solid var(--color-dark-navy);
-    box-shadow: 6px 6px 0 var(--color-dark-navy);
+    box-shadow: 5px 5px 0 var(--color-dark-navy);
+    /* Pastikan ukuran tetap */
+    transform: scale(1);
+  }
+
+  /* Dark mode */
+  .dark .logo-wrapper {
+    background-color: var(--color-dark-card);
+    border-color: var(--color-dark-border);
+    box-shadow: 5px 5px 0 var(--color-dark-border);
+  }
+
+  /* Hover - Light mode - wrapper TIDAK berubah ukuran */
+  .logo-container:hover .logo-wrapper {
+    background-color: var(--color-sage);
+    box-shadow: 8px 8px 0 var(--color-dark-navy);
+    /* Pastikan scale tetap 1 */
+    transform: scale(1) !important;
+  }
+
+  /* Hover - Dark mode */
+  .dark .logo-container:hover .logo-wrapper {
+    background-color: var(--color-dark-accent);
+    border-color: var(--color-dark-border);
+    box-shadow: 8px 8px 0 var(--color-dark-border);
+    transform: scale(1) !important;
+  }
+
+  /* Active state */
+  .logo-container:active .logo-wrapper {
+    box-shadow: 2px 2px 0 var(--color-dark-navy) !important;
+    transform: scale(0.95) !important;
+  }
+
+  .dark .logo-container:active .logo-wrapper {
+    box-shadow: 2px 2px 0 var(--color-dark-border) !important;
+  }
+
+  /* --- Logo Icon (gamepad) --- */
+  .logo-icon {
+    @apply text-base md:text-xl transition-all duration-300;
+    /* Light mode */
+    color: var(--color-dark-navy);
+    /* Pastikan transform origin di tengah */
+    transform-origin: center;
   }
 
   /* Dark mode */
   .dark .logo-icon {
-    background: linear-gradient(
-      135deg,
-      var(--color-dark-card) 0%,
-      #0a2848 100%
-    );
     color: var(--color-dark-text);
-    border-color: var(--color-dark-border);
-    box-shadow: 6px 6px 0 var(--color-dark-border);
   }
 
-  /* Hover - Light mode */
+  /* Hover - Light mode - icon berubah */
   .logo-container:hover .logo-icon {
-    background: linear-gradient(135deg, var(--color-sage) 0%, #8aad9e 100%);
+    transform: scale(1.2) rotate(180deg);
     color: var(--color-dark-navy);
-    /* transform: scale(1.05) translate(-3px, -3px); */
-    box-shadow: 8px 8px 0 var(--color-dark-navy);
   }
 
   /* Hover - Dark mode */
   .dark .logo-container:hover .logo-icon {
-    background: linear-gradient(
-      135deg,
-      var(--color-dark-accent) 0%,
-      #3a5f8a 100%
-    );
-    color: var(--color-dark-text);
-    border-color: var(--color-dark-border);
-    box-shadow: 8px 8px 0 var(--color-dark-border);
-  }
-
-  /* Active state */
-  .logo-container:active .logo-icon {
-    transform: scale(0.95) translate(4px, 4px) !important;
-    box-shadow: 2px 2px 0 var(--color-dark-navy) !important;
-  }
-
-  .dark .logo-container:active .logo-icon {
-    box-shadow: 2px 2px 0 var(--color-dark-border) !important;
-  }
-
-  /* --- Icon Gamepad --- */
-  .logo-icon i {
-    @apply text-base md:text-xl transition-all duration-300;
-    /* Light mode */
-    color: var(--color-dark-navy);
-  }
-
-  /* Dark mode */
-  .dark .logo-icon i {
     color: var(--color-dark-text);
   }
 
-  /* Hover */
-  .logo-container:hover .logo-icon i {
-    @apply scale-110 -rotate-6;
-    color: var(--color-dark-navy);
-  }
-
-  .dark .logo-container:hover .logo-icon i {
-    color: var(--color-dark-text);
-  }
-
-  /* --- Separator --- */
-  .logo-separator {
-    @apply w-px h-6 md:h-7 transition-all duration-300;
-    background-color: var(--color-dark-navy);
-    opacity: 0.3;
-  }
-
-  .dark .logo-separator {
-    background-color: var(--color-dark-text);
-    opacity: 0.2;
-  }
-
-  .logo-container:hover .logo-separator {
-    opacity: 0.6;
-  }
-
-  .dark .logo-container:hover .logo-separator {
-    opacity: 0.4;
-  }
-
-  /* --- Logo Text Premium --- */
+  /* --- Logo Text --- */
   .logo-text {
     @apply text-base md:text-xl font-black tracking-tight transition-all duration-300;
     /* Light mode */
@@ -218,10 +197,15 @@
     color: var(--color-dark-text);
   }
 
-  /* Hover */
+  /* Hover - Light mode - text berubah */
   .logo-container:hover .logo-text {
     letter-spacing: 0px;
     transform: translateX(2px);
+  }
+
+  /* Hover - Dark mode */
+  .dark .logo-container:hover .logo-text {
+    color: var(--color-dark-text);
   }
 
   /* --- Highlight "Portfolio" --- */
@@ -230,6 +214,7 @@
     /* Light mode */
     color: var(--color-sage);
     position: relative;
+    display: inline-block;
   }
 
   /* Dark mode */
@@ -252,12 +237,6 @@
   /* ========================================
    PIXEL SPARKLE EFFECT - PREMIUM
    ======================================== */
-
-  /* Sparkle container */
-  .logo-text .highlight {
-    position: relative;
-    display: inline-block;
-  }
 
   /* Main sparkle - kiri atas */
   .logo-container:hover .logo-text .highlight::before {
@@ -320,7 +299,7 @@
     }
   }
 
-  /* Extra pixel dots - sangat subtle */
+  /* --- Extra pixel dots --- */
   .logo-container:hover .logo-text .highlight .pixel-dot {
     display: inline-block;
   }
@@ -859,13 +838,11 @@
   .btn-cartoon:hover {
     transform: translate(-2px, -2px);
     box-shadow: 7px 7px 0 var(--color-dark-navy);
-    background-color: var(--color-sage);
+    background-color: var(--color-dark-card);
   }
 
-  .btn-cartoon:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 7px 7px 0 var(--color-dark-navy);
-    background-color: var(--color-sage);
+  .btn-cartoon:hover .logo-icon {
+    color: var(--color-cream);
   }
 
   .dark .btn-cartoon:hover {

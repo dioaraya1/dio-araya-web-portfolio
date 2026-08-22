@@ -99,172 +99,291 @@
   }
 
   /* ========================================
-     LOGO COMPONENTS
-     ======================================== */
+   LOGO COMPONENTS - PREMIUM DESIGN
+   ======================================== */
 
   /* Logo container */
   .logo-container {
-    @apply flex items-center gap-2 shrink-0 transition-all duration-300;
+    @apply flex items-center shrink-0 transition-all duration-300 cursor-pointer no-underline;
   }
 
-  .logo-container:hover .btn-cartoon {
-    transform: translate(-2px, -2px);
-    box-shadow: 7px 7px 0 var(--color-dark-navy);
-    background-color: var(--color-sage);
+  .logo-container:hover {
+    transform: translateX(-2px);
   }
 
-  .dark .logo-container:hover .btn-cartoon {
-    box-shadow: 7px 7px 0 var(--color-dark-border);
-    background-color: var(--color-dark-accent);
-  }
-
-  /* --- Ketika logo-container di-active, btn-cartoon di dalamnya ikut terpengaruh --- */
-  .logo-container:active .btn-cartoon {
-    transform: translate(3px, 3px);
-    box-shadow: 2px 2px 0 var(--color-dark-navy);
-  }
-
-  .dark .logo-container:active .btn-cartoon {
-    box-shadow: 2px 2px 0 var(--color-dark-border);
-  }
-
-  /* --- Logo container hover effect (untuk teks dan lainnya) --- */
-  .logo-container:hover .logo-text {
-    transform: translateX(2px);
-  }
-
-  .logo-container:hover .highlight {
-    color: var(--color-arcade-yellow);
-  }
-
-  .dark .logo-container:hover .highlight {
-    color: var(--color-arcade-pink);
-  }
-
-  /* Logo icon */
+  /* --- Logo Icon Premium --- */
   .logo-icon {
-    @apply relative w-9 h-9 md:w-11 md:h-11 rounded-lg flex items-center justify-center text-sm md:text-lg transition-all duration-300;
-    background-color: rgba(62, 93, 124, 0.9);
-    border: 2px solid rgba(62, 93, 124, 0.6);
-    color: var(--color-cream);
+    @apply relative flex items-center gap-2.5 px-4 py-2.5 md:px-5 md:py-3 rounded-xl transition-all duration-300;
+    /* Light mode */
+    background: linear-gradient(135deg, var(--color-cream) 0%, #f5e8d4 100%);
+    color: var(--color-dark-navy);
+    border: 3px solid var(--color-dark-navy);
+    box-shadow: 6px 6px 0 var(--color-dark-navy);
   }
 
+  /* Dark mode */
   .dark .logo-icon {
-    background-color: var(--color-dark-card);
-    border-color: rgba(45, 64, 89, 0.6);
+    background: linear-gradient(
+      135deg,
+      var(--color-dark-card) 0%,
+      #0a2848 100%
+    );
+    color: var(--color-dark-text);
+    border-color: var(--color-dark-border);
+    box-shadow: 6px 6px 0 var(--color-dark-border);
+  }
+
+  /* Hover - Light mode */
+  .logo-container:hover .logo-icon {
+    background: linear-gradient(135deg, var(--color-sage) 0%, #8aad9e 100%);
+    color: var(--color-dark-navy);
+    /* transform: scale(1.05) translate(-3px, -3px); */
+    box-shadow: 8px 8px 0 var(--color-dark-navy);
+  }
+
+  /* Hover - Dark mode */
+  .dark .logo-container:hover .logo-icon {
+    background: linear-gradient(
+      135deg,
+      var(--color-dark-accent) 0%,
+      #3a5f8a 100%
+    );
+    color: var(--color-dark-text);
+    border-color: var(--color-dark-border);
+    box-shadow: 8px 8px 0 var(--color-dark-border);
+  }
+
+  /* Active state */
+  .logo-container:active .logo-icon {
+    transform: scale(0.95) translate(4px, 4px) !important;
+    box-shadow: 2px 2px 0 var(--color-dark-navy) !important;
+  }
+
+  .dark .logo-container:active .logo-icon {
+    box-shadow: 2px 2px 0 var(--color-dark-border) !important;
+  }
+
+  /* --- Icon Gamepad --- */
+  .logo-icon i {
+    @apply text-base md:text-xl transition-all duration-300;
+    /* Light mode */
+    color: var(--color-dark-navy);
+  }
+
+  /* Dark mode */
+  .dark .logo-icon i {
     color: var(--color-dark-text);
   }
 
-  .logo-container:hover .logo-icon {
-    background-color: rgba(154, 188, 174, 0.8);
-    border-color: var(--color-dark-navy);
-    transform: scale(1.05);
-  }
-
-  .dark .logo-container:hover .logo-icon {
-    background-color: rgba(74, 111, 165, 0.8);
-    border-color: var(--color-dark-border);
-  }
-
-  /* Logo icon glow effect */
-  .logo-container:hover .logo-icon {
-    box-shadow: 0 0 20px rgba(132, 181, 189, 0.15);
-  }
-
-  .dark .logo-container:hover .logo-icon {
-    box-shadow: 0 0 20px rgba(74, 111, 165, 0.15);
-  }
-
-  /* Logo icon i */
-  .logo-icon i {
-    @apply transition-all duration-300;
-  }
-
+  /* Hover */
   .logo-container:hover .logo-icon i {
-    @apply scale-110;
-  }
-
-  /* Logo text */
-  .logo-text {
-    @apply text-lg md:text-2xl font-black tracking-tight transition-all duration-300 relative;
-    color: rgba(62, 93, 124, 0.9);
-  }
-
-  .dark .logo-text {
-    color: rgba(234, 234, 234, 0.9);
-  }
-
-  .logo-container:hover .logo-text {
+    @apply scale-110 -rotate-6;
     color: var(--color-dark-navy);
-    letter-spacing: 0.5px;
+  }
+
+  .dark .logo-container:hover .logo-icon i {
+    color: var(--color-dark-text);
+  }
+
+  /* --- Separator --- */
+  .logo-separator {
+    @apply w-px h-6 md:h-7 transition-all duration-300;
+    background-color: var(--color-dark-navy);
+    opacity: 0.3;
+  }
+
+  .dark .logo-separator {
+    background-color: var(--color-dark-text);
+    opacity: 0.2;
+  }
+
+  .logo-container:hover .logo-separator {
+    opacity: 0.6;
+  }
+
+  .dark .logo-container:hover .logo-separator {
+    opacity: 0.4;
+  }
+
+  /* --- Logo Text Premium --- */
+  .logo-text {
+    @apply text-base md:text-xl font-black tracking-tight transition-all duration-300;
+    /* Light mode */
+    color: var(--color-dark-navy);
+    letter-spacing: -0.5px;
+  }
+
+  /* Dark mode */
+  .dark .logo-text {
+    color: var(--color-dark-text);
+  }
+
+  /* Hover */
+  .logo-container:hover .logo-text {
+    letter-spacing: 0px;
     transform: translateX(2px);
   }
 
-  .dark .logo-container:hover .logo-text {
-    color: var(--color-dark-text);
-  }
-
-  /* Logo highlight */
+  /* --- Highlight "Portfolio" --- */
   .logo-text .highlight {
     @apply transition-all duration-300;
-    color: rgba(154, 188, 174, 0.9);
-  }
-
-  .dark .logo-text .highlight {
-    color: rgba(74, 111, 165, 0.9);
-  }
-
-  .logo-container:hover .logo-text .highlight {
+    /* Light mode */
     color: var(--color-sage);
+    position: relative;
   }
 
-  .dark .logo-container:hover .logo-text .highlight {
+  /* Dark mode */
+  .dark .logo-text .highlight {
     color: var(--color-dark-accent);
   }
 
-  /* Text underline retro */
-  .logo-text::after {
-    content: "";
-    @apply absolute bottom-[-2px] left-0 w-0 h-[3px] transition-all duration-300;
-    background-color: var(--color-arcade-yellow);
+  /* Hover - Light mode */
+  .logo-container:hover .logo-text .highlight {
+    color: var(--color-dark-navy);
+    text-shadow: 0 0 20px rgba(62, 93, 124, 0.1);
   }
 
-  .dark .logo-text::after {
-    background-color: var(--color-arcade-pink);
+  /* Hover - Dark mode */
+  .dark .logo-container:hover .logo-text .highlight {
+    color: var(--color-dark-text);
+    text-shadow: 0 0 20px rgba(234, 234, 234, 0.1);
   }
 
-  .logo-container:hover .logo-text::after {
-    @apply w-full;
+  /* ========================================
+   PIXEL SPARKLE EFFECT - PREMIUM
+   ======================================== */
+
+  /* Sparkle container */
+  .logo-text .highlight {
+    position: relative;
+    display: inline-block;
   }
 
-  /* Sparkle effect on highlight */
+  /* Main sparkle - kiri atas */
   .logo-container:hover .logo-text .highlight::before {
     content: "✦";
-    @apply absolute left-[-20px] top-[-5px] text-xs;
+    position: absolute;
+    left: -16px;
+    top: -10px;
+    font-size: 9px;
     color: var(--color-arcade-yellow);
-    animation: sparkle 0.6s ease-in-out infinite alternate;
+    opacity: 0;
+    animation: sparklePremium 1.5s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
   }
 
+  /* Secondary sparkle - kanan bawah */
   .logo-container:hover .logo-text .highlight::after {
     content: "✦";
-    @apply absolute right-[-20px] top-[-5px] text-xs;
+    position: absolute;
+    right: -16px;
+    bottom: -10px;
+    font-size: 7px;
     color: var(--color-arcade-yellow);
-    animation: sparkle 0.6s ease-in-out infinite alternate 0.3s;
+    opacity: 0;
+    animation: sparklePremium 1.5s ease-in-out infinite 0.75s;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
   }
 
+  /* Dark mode sparkle */
   .dark .logo-container:hover .logo-text .highlight::before,
   .dark .logo-container:hover .logo-text .highlight::after {
     color: var(--color-arcade-pink);
+    text-shadow: 0 0 10px rgba(255, 107, 157, 0.3);
   }
 
-  @keyframes sparkle {
+  /* Premium sparkle animation */
+  @keyframes sparklePremium {
     0% {
       opacity: 0;
-      transform: scale(0.5) rotate(0deg);
+      transform: scale(0.2) rotate(0deg) translateY(0);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1.2) rotate(45deg) translateY(-2px);
+    }
+    40% {
+      opacity: 0.8;
+      transform: scale(0.9) rotate(90deg) translateY(0);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.1) rotate(135deg) translateY(-2px);
+    }
+    80% {
+      opacity: 0.6;
+      transform: scale(0.7) rotate(180deg) translateY(0);
     }
     100% {
-      opacity: 1;
-      transform: scale(1) rotate(180deg);
+      opacity: 0;
+      transform: scale(0.2) rotate(225deg) translateY(0);
+    }
+  }
+
+  /* Extra pixel dots - sangat subtle */
+  .logo-container:hover .logo-text .highlight .pixel-dot {
+    display: inline-block;
+  }
+
+  .pixel-dot {
+    display: none;
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: var(--color-arcade-yellow);
+    opacity: 0;
+    animation: dotPulse 2s ease-in-out infinite;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.2);
+  }
+
+  .dark .pixel-dot {
+    background-color: var(--color-arcade-pink);
+    box-shadow: 0 0 6px rgba(255, 107, 157, 0.2);
+  }
+
+  .pixel-dot:nth-child(1) {
+    top: -12px;
+    left: 30%;
+    animation-delay: 0.3s;
+  }
+
+  .pixel-dot:nth-child(2) {
+    bottom: -12px;
+    right: 20%;
+    animation-delay: 1s;
+  }
+
+  .pixel-dot:nth-child(3) {
+    top: 50%;
+    left: -18px;
+    animation-delay: 0.6s;
+  }
+
+  @keyframes dotPulse {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    20% {
+      opacity: 0.8;
+      transform: scale(1.5);
+    }
+    40% {
+      opacity: 0.4;
+      transform: scale(0.8);
+    }
+    60% {
+      opacity: 0.8;
+      transform: scale(1.2);
+    }
+    80% {
+      opacity: 0.2;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
     }
   }
 
@@ -479,7 +598,7 @@
 
   /* Cartoon Text 3D */
   .cartoon-text-3d {
-    @apply font-comic font-black uppercase inline-block transition-all duration-300;
+    @apply font-black uppercase inline-block transition-all duration-300;
     font-size: 2.5rem;
     color: var(--color-dark-navy);
     text-shadow:
@@ -511,7 +630,7 @@
 
   /* Cartoon Text Outline */
   .cartoon-text-outline {
-    @apply font-comic font-black uppercase inline-block transition-all duration-300;
+    @apply font-black uppercase inline-block transition-all duration-300;
     font-size: 2rem;
     color: var(--color-cream);
     text-shadow:
@@ -555,7 +674,7 @@
 
   /* Cartoon Text Wobble */
   .cartoon-text-wobble {
-    @apply font-comic font-black uppercase inline-block transition-all duration-300;
+    @apply font-black uppercase inline-block transition-all duration-300;
     font-size: 2.5rem;
     color: var(--color-dark-navy);
     animation: wobble 3s ease-in-out infinite;
@@ -603,7 +722,7 @@
 
   /* Cartoon Text Rainbow */
   .cartoon-text-rainbow {
-    @apply font-comic font-black uppercase inline-block transition-all duration-300;
+    @apply font-black uppercase inline-block transition-all duration-300;
     font-size: 2.5rem;
     background: linear-gradient(
       135deg,
